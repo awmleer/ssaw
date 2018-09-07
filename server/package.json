@@ -9,7 +9,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "koa": "^2.5.2"
+    "koa": "^2.5.2",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
