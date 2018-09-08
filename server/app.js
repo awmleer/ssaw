@@ -1,12 +1,10 @@
 const Koa = require('koa')
 const app = new Koa()
 
-const request = require('request')
+const router = require('./router')
 
-const config = require('./config/config')
-
-app.use(async ctx => {
-  ctx.response.body = request(`https://api.caiyunapp.com/v2/${config.caiyunToken}/121.6544,25.1552/forecast.json`)
-})
+app
+  .use(router.routes())
+  .use(router.allowedMethods())
 
 app.listen(3000)
