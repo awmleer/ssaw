@@ -1,4 +1,7 @@
 <ion-content>
+  <div class="back--big-icon">
+    <i *ngIf="realtime" [class]="'weather-icon single-color '+realtime.result.skycon"></i>
+  </div>
   <div>
     <button ion-button clear menuToggle color="light">
       <ion-icon name="menu"></ion-icon>
@@ -6,8 +9,13 @@
   </div>
   <div class="container" padding-horizontal>
     <ng-container *ngIf="realtime && forecast">
-      <div>
-        {{realtime.result.temperature}}
+      <div class="head">
+        <h1>
+          {{realtime.result.temperature}}<small>{{realtime.result.skycon}}</small>
+        </h1>
+        <p>
+          {{forecast.result.forecast_keypoint}}
+        </p>
       </div>
     </ng-container>
   </div>
