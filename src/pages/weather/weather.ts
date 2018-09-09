@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {WeatherService} from '../../services/weather.service'
-import {Geoposition} from '@ionic-native/geolocation'
+import {WeatherService} from '../../services/weather.service';
+import {Geoposition} from '@ionic-native/geolocation';
 
 
 @IonicPage()
@@ -25,8 +25,8 @@ export class WeatherPage {
 
   async ionViewDidLoad() {
     await this.weatherSvc.getPosition();
-    this.realtime = this.weatherSvc.getRealtime();
-    this.forecast = this.weatherSvc.getForecast();
+    this.realtime = await this.weatherSvc.getRealtime();
+    this.forecast = await this.weatherSvc.getForecast();
   }
 
 }

@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "weather";
+  src: url('assets/icon/weather.ttf') format('truetype');
+}
+
+.weather-icon {
+  font-family:"weather" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  .single-color {
+    .CLEAR_DAY:before { //晴天
+      content: "\e602";
+    }
+    .CLEAR_NIGHT:before { //晴夜
+      content: "\e604";
+    }
+    .PARTLY_CLOUDY_DAY:before { //多云
+      content: "\e601";
+    }
+    .PARTLY_CLOUDY_NIGHT:before { //多云
+      content: "\e603";
+    }
+    .CLOUDY:before { //阴
+      content: "\e605";
+    }
+    .RAIN:before { //雨
+      content: "\e608";
+    }
+    .SNOW:before { //雪
+      content: "\e60d";
+    }
+    .WIND:before { //风
+      content: "\e614";
+    }
+    .HAZE:before { //雾霾沙尘
+      content: "\e613";
+    }
+  }
+}
+

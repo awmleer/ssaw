@@ -1,5 +1,14 @@
 <ion-content>
-  <button ion-button clear menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
+  <div>
+    <button ion-button clear menuToggle color="light">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </div>
+  <div class="container" padding-horizontal>
+    <ng-container *ngIf="realtime && forecast">
+      <div>
+        {{realtime.result.temperature}}
+      </div>
+    </ng-container>
+  </div>
 </ion-content>

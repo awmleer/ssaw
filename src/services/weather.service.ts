@@ -24,15 +24,23 @@ export class WeatherService {
   }
 
   async getRealtime() {
-    return this.apiSvc.get('/realtime', {
+    const data = await this.apiSvc.get('/realtime', {
       ...this.lngLat
     });
+    if (data.status !== 'ok' || data.result.status !== 'ok') {
+      throw new Error('出错了');
+    }
+    return data;
   }
 
   async getForecast() {
-    return this.apiSvc.get('/forecast', {
+    const data = await this.apiSvc.get('/forecast', {
       ...this.lngLat
     });
+    if (data.status !== 'ok') {
+      throw new Error('出错了');
+    }
+    return data;
   }
 
 }
