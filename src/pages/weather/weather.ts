@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {WeatherService} from '../../services/weather.service'
+import {Geoposition} from '@ionic-native/geolocation'
 
-/**
- * Generated class for the WeatherPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +10,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'weather.html',
 })
 export class WeatherPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  get position(): Geoposition {
+    return this.weatherSvc.position;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WeatherPage');
+  realtime = null;
+  forecast = null;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private weatherSvc: WeatherService,
+  ) {}
+
+  async ionViewDidLoad() {
+    await this.weatherSvc.getPosition();
+    this.realtime = this.weatherSvc.getRealtime();
+    this.forecast = this.weatherSvc.getForecast();
   }
 
 }

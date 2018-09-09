@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { HttpClient } from '@angular/common/http';
 import {WeatherPage} from '../pages/weather/weather'
 
 @Component({
@@ -22,7 +21,6 @@ export class MyApp {
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    private httpClient: HttpClient,
   ) {
     this.initializeApp();
 
@@ -30,12 +28,8 @@ export class MyApp {
     this.pages = [
       { title: '天气', component: WeatherPage },
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
     ];
-
-    this.httpClient.get('/m-weather-com-cn/d/town/index?lat=30.268425&lon=120.123055').subscribe(res => {
-      console.log(res);
-    });
   }
 
   initializeApp() {

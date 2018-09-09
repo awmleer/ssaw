@@ -10,29 +10,39 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {WeatherPageModule} from '../pages/weather/weather.module'
+import {WeatherService} from '../services/weather.service'
+import {ApiService} from '../services/api.service'
+import {ToastService} from '../services/toast.service'
+import {Geolocation} from '@ionic-native/geolocation'
+import {IonicStorageModule} from '@ionic/storage'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     WeatherPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Geolocation,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ToastService,
+    ApiService,
+    WeatherService,
   ]
 })
 export class AppModule {}
