@@ -30,7 +30,7 @@ export class WeatherService {
     if (data.status !== 'ok' || data.result.status !== 'ok') {
       throw new Error('出错了');
     }
-    return data;
+    return data.result;
   }
 
   async getForecast() {
@@ -40,7 +40,7 @@ export class WeatherService {
     if (data.status !== 'ok') {
       throw new Error('出错了');
     }
-    return data;
+    return data.result;
   }
 
 }
