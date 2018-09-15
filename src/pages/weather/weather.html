@@ -1,15 +1,19 @@
-<ion-content>
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle color="light">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!--<ion-title>Home</ion-title>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content [ngClass]="realtime?.skycon">
   <div class="back-big-icon">
     <i *ngIf="realtime" [class]="'weather-icon single-color '+realtime.skycon"></i>
   </div>
-  <div>
-    <button ion-button clear menuToggle color="light">
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  </div>
   <div class="container" padding-horizontal>
     <ng-container *ngIf="realtime && forecast">
-      <div class="head">
+      <section class="head">
         <h1>
           {{realtime.temperature}}°
           <small>{{realtime | translateSkycon}}</small>
@@ -17,7 +21,14 @@
         <p>
           {{forecast.forecast_keypoint}}
         </p>
-      </div>
+      </section>
+      <section class="detail">
+        <div class="cards">
+          <div class="card">
+
+          </div>
+        </div>
+      </section>
     </ng-container>
   </div>
 </ion-content>

@@ -8,6 +8,9 @@
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  .humidity:before {
+    content: "\e60c";
+  }
   &.single-color {
     &.CLEAR_DAY:before { //晴天
       content: "\e602";

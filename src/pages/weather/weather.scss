@@ -1,10 +1,42 @@
 page-weather {
-  .content {
-    background: #91b3f0;
+  .toolbar {
+    .toolbar-background {
+      border-bottom: none;
+      background-color: transparent;
+    }
+  }
+  ion-content.content {
     color: #ffffff;
+    &.CLEAR_DAY {
+      background: linear-gradient(50deg, #849ee1, #a2b9ee);
+    }
+    &.CLEAR_NIGHT {
+
+    }
+    &.PARTLY_CLOUDY_DAY {
+
+    }
+    &.PARTLY_CLOUDY_NIGHT {
+
+    }
+    &.CLOUDY {
+      background: linear-gradient(45deg, #424242, #b5b5b5);
+    }
+    &.RAIN {
+
+    }
+    &.SNOW {
+
+    }
+    &.WIND {
+
+    }
+    &.HAZE {
+
+    }
   }
   .container {
-    .head {
+    section.head {
       h1 {
         font-size: 72px;
         font-weight: 200;
@@ -13,9 +45,18 @@ page-weather {
         }
       }
     }
+    section.detail {
+      .cards {
+        overflow-x: scroll;
+        .card {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
   }
   div.back-big-icon {
-    position: absolute;
+    position: fixed;
     right: -15vw;
     top: -15vw;
     i.weather-icon {
