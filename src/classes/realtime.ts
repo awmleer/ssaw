@@ -32,5 +32,9 @@ export interface Realtime {
       intensity: number;
       datasource: string;
     };
-  }
+  };
+  wind: {
+    direction: number;
+    speed: number;
+  };
 }

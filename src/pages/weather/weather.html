@@ -27,7 +27,32 @@
       <section class="detail">
         <div class="cards">
           <div class="card">
-
+            <i class="weather-icon humidity"></i>
+            <p>
+              湿度<br>
+              {{realtime.humidity}}
+            </p>
+          </div>
+          <div class="card">
+            <i class="weather-icon cloudrate"></i>
+            <p>
+              云量<br>
+              {{realtime.cloudrate}}
+            </p>
+          </div>
+          <div class="card">
+            <i class="weather-icon wind-speed"></i>
+            <p>
+              风速<br>
+              {{realtime.wind.speed}}
+            </p>
+          </div>
+          <div class="card">
+            <i class="weather-icon wind-direction"></i>
+            <p>
+              风向<br>
+              {{realtime.wind.direction}}
+            </p>
           </div>
         </div>
       </section>

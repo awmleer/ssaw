@@ -8,8 +8,17 @@
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  .humidity:before {
+  &.humidity:before {
     content: "\e60c";
+  }
+  &.cloudrate:before {
+    content: "\e623";
+  }
+  &.wind-speed:before {
+    content: "\e64c";
+  }
+  &.wind-direction:before {
+    content: "\e624";
   }
   &.single-color {
     &.CLEAR_DAY:before { //晴天

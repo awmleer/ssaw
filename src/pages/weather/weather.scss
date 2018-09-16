@@ -51,11 +51,27 @@ page-weather {
       }
     }
     section.detail {
-      .cards {
+      div.cards {
         overflow-x: scroll;
-        .card {
-          width: 200px;
-          height: 200px;
+        white-space: nowrap;
+        div.card {
+          padding: 12px 24px;
+          display: inline-block;
+          text-align: center;
+          background: #ffffff;
+          border-radius: 5px;
+          color: #181818;
+          margin-right: 8px;
+          &:last-of-type {
+            margin-right: 0;
+          }
+          i {
+            display: block;
+            font-size: 30px;
+          }
+          p {
+            margin: 6px 0 4px;
+          }
         }
       }
     }
