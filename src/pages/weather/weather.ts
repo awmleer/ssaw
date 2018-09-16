@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {WeatherService} from '../../services/weather.service';
 import {Geoposition} from '@ionic-native/geolocation';
+import {Realtime} from '../../classes/realtime'
+import {Forecast} from '../../classes/forecast'
 
 
 @IonicPage()
@@ -14,8 +16,8 @@ export class WeatherPage {
     return this.weatherSvc.position;
   }
 
-  realtime = null;
-  forecast = null;
+  realtime: Realtime = null;
+  forecast: Forecast = null;
 
   constructor(
     public navCtrl: NavController,

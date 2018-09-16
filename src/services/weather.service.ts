@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {ApiService} from './api.service'
 import {Geolocation, Geoposition} from '@ionic-native/geolocation'
+import {Realtime} from '../classes/realtime'
+import {Forecast} from '../classes/forecast'
 
 @Injectable()
 export class WeatherService {
@@ -23,7 +25,7 @@ export class WeatherService {
     };
   }
 
-  async getRealtime() {
+  async getRealtime(): Promise<Realtime> {
     const data = await this.apiSvc.get('/realtime', {
       ...this.lngLat
     });
@@ -33,7 +35,7 @@ export class WeatherService {
     return data.result;
   }
 
-  async getForecast() {
+  async getForecast(): Promise<Forecast> {
     const data = await this.apiSvc.get('/forecast', {
       ...this.lngLat
     });
