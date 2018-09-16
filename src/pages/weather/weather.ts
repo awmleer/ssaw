@@ -19,6 +19,8 @@ export class WeatherPage {
   realtime: Realtime = null;
   forecast: Forecast = null;
 
+  rainDrops = Array(50);
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,

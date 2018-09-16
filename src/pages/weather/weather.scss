@@ -12,6 +12,8 @@ page-weather {
   }
   ion-content.content {
     color: #ffffff;
+    background: #878de1; // fallback
+    position: relative;
     &.CLEAR_DAY {
       background: linear-gradient(50deg, #849ee1, #a2b9ee);
     }
@@ -25,10 +27,10 @@ page-weather {
 
     }
     &.CLOUDY {
-      background: linear-gradient(45deg, #424242, #b5b5b5);
+      background: linear-gradient(50deg, #424242, #b5b5b5);
     }
     &.RAIN {
-
+      background: linear-gradient(50deg, #3a3d68, #53568d);
     }
     &.SNOW {
 
@@ -83,6 +85,47 @@ page-weather {
     i.weather-icon {
       font-size: 60vw;
       opacity: 0.5;
+    }
+  }
+}
+
+
+.rain {
+  background: white;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 100%);
+  height: 50px;
+  position: absolute;
+  width: 1px;
+  animation-iteration-count: infinite;
+}
+
+
+$rain: 50;
+
+@for $i from 1 through $rain {
+  $top: (random(50) + 30) * 1%;
+  $left: random(100) * 1%;
+  $opacity: (random(30) + 30) * 0.01;
+  $delay: random(15) * 1s;
+
+  .rain:nth-of-type(#{$i}) {
+    animation-name: rain-#{$i};
+    animation-delay: $delay;
+    animation-duration: random(5) + 4s;
+    left: $left;
+    opacity: $opacity;
+    top: -$top;
+  }
+
+  @Keyframes rain-#{$i} {
+    0% {
+      left: $left;
+      opacity: $opacity;
+      top: -$top;
+    }
+    100% {
+      opacity: 0;
+      top: $top + 50%;
     }
   }
 }

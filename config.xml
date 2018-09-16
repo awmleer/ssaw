@@ -86,4 +86,5 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="获取当前位置的天气信息" />
     </plugin>
     <plugin name="cordova-sqlite-storage" spec="^2.4.0" />
+    <engine name="ios" spec="4.5.5" />
 </widget>

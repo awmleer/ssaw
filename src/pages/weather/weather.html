@@ -11,6 +11,9 @@
   <div class="back-big-icon">
     <i *ngIf="realtime" [class]="'weather-icon single-color '+realtime.skycon"></i>
   </div>
+  <ng-container *ngIf="realtime?.skycon === 'RAIN'">
+    <i *ngFor="let i of rainDrops" class="rain"></i>
+  </ng-container>
   <div class="container" padding-horizontal>
     <ng-container *ngIf="realtime && forecast">
       <section class="head">
