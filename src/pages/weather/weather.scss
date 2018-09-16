@@ -1,8 +1,13 @@
 page-weather {
-  .toolbar {
-    .toolbar-background {
-      border-bottom: none;
-      background-color: transparent;
+  .weather-header {
+    &.header-md::after {
+      display: none;
+    }
+    .toolbar {
+      .toolbar-background {
+        border-bottom: none;
+        background-color: transparent;
+      }
     }
   }
   ion-content.content {
